@@ -7,21 +7,15 @@ import {
   getSubscription,
   getTopic,
   getSchema,
-  getDefinition,
-  parseDefinition,
 } from "./lib/services/pubsub-service";
-// import * as storageService from "./lib/services/storage-service";
 
 const start = async () => {
   console.log("Starting server.");
 
-  const definition = getDefinition();
-  const type = parseDefinition(definition);
   const client = getClient();
   const schema = await getSchema(client);
   const topic = await getTopic(client, {
     schemaName: await schema.getName(),
-    definition,
   });
   const subscription = await getSubscription(topic);
 
@@ -42,11 +36,6 @@ const start = async () => {
     const localFile = `tmp/${message.id}.json`;
 
     await writeFile(localFile, message.data);
-
-    // storageService.upload(localFile, {
-    //   resumable: false,
-    //   destination: `${message.id}.json`,
-    // });
 
     message.ack();
   });

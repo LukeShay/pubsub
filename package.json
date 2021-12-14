@@ -8,7 +8,9 @@
     "dev": "nodemon --watch lib --exec yarn start",
     "start": "node --experimental-modules --es-module-specifier-resolution=node index.js",
     "pubsub": "gcloud beta emulators pubsub start --project=$GCP_PROJECT_ID",
-    "storage": "docker run --name fake-gcs-server -p 4443:4443 fsouza/fake-gcs-server -scheme http"
+    "storage": "docker run --name fake-gcs-server -p 4443:4443 fsouza/fake-gcs-server -scheme http",
+    "docker:build": "docker build -t lukeshaydocker/pubsub .",
+    "docker:build": "docker run lukeshaydocker/pubsub "
   },
   "dependencies": {
     "@google-cloud/pubsub": "^2.18.4",

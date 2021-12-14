@@ -1,28 +1,16 @@
 {
   "gcp": {
+    "projectId": "pubsub-335122",
     "pubsub": {
-      "topicName": "test-topic-2",
+      "topicName": "pubsub",
+      "subscriptionName": "pubsub",
+      "schemaName": "pubsub",
       "subscriptionOptions": {
         "flowControl": {
           "maxMessages": 50
         }
       },
-      "schemaConfig": {
-        "name": "test-topic-schema-2",
-        "type": "AVRO",
-        "encoding": "JSON",
-        "definition": {
-          "type": "record",
-          "namespace": "messages",
-          "name": "Mesage",
-          "fields": [
-            {
-              "name": "message",
-              "type": "string"
-            }
-          ]
-        }
-      }
+      "clientConfig": {}
     }
   },
   "server": {
