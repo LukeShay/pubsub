@@ -1,0 +1,32 @@
+{
+  "gcp": {
+    "pubsub": {
+      "topicName": "test-topic-2",
+      "subscriptionOptions": {
+        "flowControl": {
+          "maxMessages": 50
+        }
+      },
+      "schemaConfig": {
+        "name": "test-topic-schema-2",
+        "type": "AVRO",
+        "encoding": "JSON",
+        "definition": {
+          "type": "record",
+          "namespace": "messages",
+          "name": "Mesage",
+          "fields": [
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "server": {
+    "port": 3000,
+    "host": "0.0.0.0"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "gcp": {
+    "projectId": "GCP_PROJECT_ID",
+    "pubsub": {
+      "clientConfig": {
+        "apiEndpoint": "PUBSUB_API_ENDPOINT"
+      }
+    },
+    "storage": {
+      "clientConfig": {
+        "apiEndpoint": "STORAGE_API_ENDPOINT"
+      },
+      "bucket": "STORAGE_BUCKET"
+    }
+  },
+  "server": {
+    "port": "PORT",
+    "host": "HOST"
+  }
+}
